@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2022-09-27T18:34:12.9238293Z;True|2022-09-27T14:50:35.7374770-03:00;True|2022-09-27T14:35:22.2396546-03:00;True|2022-09-27T14:34:13.7221528-03:00;True|2022-09-27T14:26:07.3506407-03:00;True|2022-09-27T14:22:32.2752595-03:00;True|2022-09-27T13:38:24.6439184-03:00;True|2022-09-27T12:05:51.5140849-03:00;True|2022-09-27T12:05:22.8177919-03:00;True|2022-09-27T11:18:59.5922686-03:00;True|2022-09-27T10:09:02.0272176-03:00;True|2022-09-17T14:52:53.4386281-03:00;</History>
+  </PropertyGroup>
+</Project>

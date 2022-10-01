@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8A7TyR05D7Vb4PEc5LUfyKTHv2ff+N5TjdhTo0K8uoAe6aEH0gVZeXEk40hJG9gJjMudSAGUuCqr8bf6G1wFDg==",
+  "success": true,
+  "projectFilePath": "C:\\ProyectosGitHubUTN\\EasyParkingAPI\\ServiceWebApi\\ServiceWebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LUCIANO\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

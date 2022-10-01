@@ -1,0 +1,19 @@
+﻿entityframeworkcore\add-migration 0003 -context EasyParkingAuthContext -project EasyParkingAPI
+// La primera vez lo crea. 
+// Cada vez que se crea una entidad nueva.
+// Se va cambiando el numero 0001 - 0002 - etc..
+// Genera migraciones en una carpeta.
+
+entityframeworkcore\update-database -context EasyParkingAuthContext -project EasyParkingAPI
+// Hace los cambios que deban hacerse en la base de datos.
+
+entityframeworkcore\add-migration 0001 -context DataContext  -project EasyParkingAPI
+
+
+**** Forma de trabajar del Add y el Update ****
+
+El Add prepara todo el codigo, genera la migracion y la deja lista. No importa a donde apunte el appsetting.json,
+Es indiferente si apunta localmente o a la nube.
+
+El Update hace impactar los cambios generados por el Add. Aca si importa a donde apunta el appsetting.json,
+hacia donde apunte el appsetting.json sera en donde impacten los cambios en la base de datos.
