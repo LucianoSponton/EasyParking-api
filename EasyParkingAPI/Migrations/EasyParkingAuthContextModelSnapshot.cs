@@ -47,6 +47,9 @@ namespace EasyParkingAPI.Migrations
                     b.Property<DateTime>("FechaDeNacimiento")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("FotoDePerfil")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("Link_Foto")
                         .HasColumnType("nvarchar(max)");
 
@@ -84,6 +87,9 @@ namespace EasyParkingAPI.Migrations
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Sexo")
+                        .HasColumnType("int");
 
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");

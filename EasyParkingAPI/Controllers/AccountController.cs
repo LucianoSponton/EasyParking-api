@@ -94,6 +94,8 @@ namespace EasyParkingAPI.Controllers
                 ApplicationUser appuser = _userManager.FindByNameAsync(user.Identity.Name).Result;
                 appuser.Telefono = userinfo.Telefono;
                 appuser.Apodo = userinfo.Apodo;
+                appuser.FotoDePerfil = userinfo.FotoDePerfil;
+
                 await _userManager.UpdateAsync(appuser);
                 return Ok();
             }
@@ -486,9 +488,11 @@ namespace EasyParkingAPI.Controllers
                                 Email = userinfo.Email.ToLower(),
                                 Apellido = userinfo.Apellido,
                                 Nombre = userinfo.Nombre,
+                                FechaDeNacimiento = userinfo.FechaDeNacimiento,
                                 NumeroDeDocumento = userinfo.NumeroDeDocumento,
                                 TipoDeDocumento = userinfo.TipoDeDocumento,
                                 Telefono = userinfo.Telefono,
+                                Sexo = userinfo.Sexo,
                                 EmailConfirmed = true
 
                             };
@@ -617,7 +621,9 @@ namespace EasyParkingAPI.Controllers
                     userInfo.Telefono = appuser.Telefono;
                     userInfo.UserName = appuser.UserName;
                     userInfo.Apodo = appuser.Apodo;
-
+                    userInfo.FotoDePerfil = appuser.FotoDePerfil;
+                    userInfo.FechaDeNacimiento = appuser.FechaDeNacimiento;
+                    userInfo.Sexo = appuser.Sexo;
                     return userInfo;
                 }
                 else

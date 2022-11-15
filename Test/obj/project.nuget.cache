@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "alahQB6L4JGbBdX7/ATuuDzk84w11PKRhztvjueSwXeLFxB5m2wXQzRjIrxz/tQwRC2NWTKnJQrfJ/4t0FyPYg==",
+  "dgSpecHash": "8jH/hHhBIvqG6LlftDelEbaT8yaOQIYvvuovS9C/SqRoCeDyy9p4K2xkFrmmwcHIu+iEejmuvuGEoWehAxwpRg==",
   "success": true,
   "projectFilePath": "C:\\ProyectosGitHubUTN\\EasyParkingAPI\\Test\\Test.csproj",
   "expectedPackageFiles": [
@@ -186,7 +186,8 @@
     "C:\\Users\\LUCIANO\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\LUCIANO\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\LUCIANO\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\LUCIANO\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\LUCIANO\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\LUCIANO\\.nuget\\packages\\easyparking.model\\1.0.0\\easyparking.model.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

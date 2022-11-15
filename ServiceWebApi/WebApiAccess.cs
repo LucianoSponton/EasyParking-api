@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Model;
+using Model.Enums;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -97,6 +99,40 @@ namespace ServiceWebApi
                 throw ex;
             }
         }
+
+        public static async Task<bool> CreateUserAsync(string webApiUri , UserInfo userInfo )
+        {
+            try
+            {
+                HttpClient httpClient = new HttpClient();
+                httpClient.BaseAddress = new Uri(webApiUri);
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                string userjson = JsonConvert.SerializeObject(userInfo);
+                HttpContent content = new StringContent(userjson, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await httpClient.PostAsync("api/account/CreateUser", content);
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    string errorcontent = response.Content.ReadAsStringAsync().Result;
+                    throw new Exception($"ERROR ... {response.StatusCode.ToString()} - {errorcontent}");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
     }
 }

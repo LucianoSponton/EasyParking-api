@@ -86,3 +86,5 @@ C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\Ea
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\EasyParkingAPI.dll
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\EasyParkingAPI.pdb
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\EasyParkingAPI.genruntimeconfig.cache
+C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\bin\Release\netcoreapp3.1\ServiceWebApi.dll
+C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\bin\Release\netcoreapp3.1\ServiceWebApi.pdb

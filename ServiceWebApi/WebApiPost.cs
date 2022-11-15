@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiceWebApi
 {
-    public class WebApiPost<T1, T2>
+    public class WebApiPost<T1, T2> // ESTE SE USA CUANDO ENVIAMOS Y ESPERAMOS UNA RESPUESTA
     {
         private WebApiAccess _webApiAccess;
 
@@ -74,9 +74,9 @@ namespace ServiceWebApi
 
         }
 
-    }
+    } 
 
-    public class WebApiPost<T1>
+    public class WebApiPost<T1> // ESTE SE USA CUANDO SOLO ENVIAMOS
     {
         private WebApiAccess _webApiAccess;
 

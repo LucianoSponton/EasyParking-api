@@ -3,6 +3,8 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Model;
+using Model.Enums;
+using System;
 
 namespace EasyParkingAPI.Data
 {
@@ -21,6 +23,10 @@ namespace EasyParkingAPI.Data
         }
 
         public DbSet<Estacionamiento> Estacionamientos { get; set; }
+        public DbSet<Jornada> Jornadas { get; set; }
+        public DbSet<DataVehiculoAlojado> DataVehiculoAlojados { get; set; }
+        public DbSet<RangoH> RangoHs { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,10 +43,52 @@ namespace EasyParkingAPI.Data
             modelBuilder.Entity<Estacionamiento>()
                 .HasKey(c => c.Id);
 
-            modelBuilder.Entity<Estacionamiento>()
-                .HasOne<ApplicationUser>()
-                .WithMany()
-                .HasForeignKey(p => p.UserId);
+            //modelBuilder.Entity<Estacionamiento>()
+            //    .HasOne<ApplicationUser>()
+            //    .WithMany()
+            //    .HasForeignKey(p => p.UserId);
+
+
+            //***************************************************************************************************
+            // JORNADA
+            //***************************************************************************************************
+            modelBuilder.Entity<Jornada>()
+                .HasKey(c => c.Id);
+
+            modelBuilder.Entity<Jornada>()
+               .HasOne(i => i.Estacionamiento)
+               .WithMany(c => c.Jornadas);
+
+            modelBuilder.Entity<Jornada>()
+               .Property(e => e.DiaDeLaSemana)
+               .HasConversion(
+                   v => v.ToString(),
+                   v => (Dia)Enum.Parse(typeof(Dia), v));
+
+            //***************************************************************************************************
+            // DATA VEHICULO ALOJADO
+            //***************************************************************************************************
+            modelBuilder.Entity<DataVehiculoAlojado>()
+                .HasKey(c => c.Id);
+
+            modelBuilder.Entity<DataVehiculoAlojado>()
+               .HasOne(i => i.Estacionamiento)
+               .WithMany(c => c.TiposDeVehiculosAdmitidos );
+
+           
+
+            //***************************************************************************************************
+            // RANGO H
+            //***************************************************************************************************
+            modelBuilder.Entity<RangoH>()
+                .HasKey(c => c.Id);
+
+            modelBuilder.Entity<RangoH>()
+               .HasOne(i => i.Jornada)
+               .WithMany(c => c.Horarios);
+
+
+
 
         }
 

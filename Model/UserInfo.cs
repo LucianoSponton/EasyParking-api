@@ -14,6 +14,9 @@ namespace Model
         public string NumeroDeDocumento { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
         public string Telefono { get; set; }
+        public TipoDeSexo Sexo { get; set; }
+        public byte[] FotoDePerfil { get; set; }
+
         public string Apodo { get; set; }
 
     }

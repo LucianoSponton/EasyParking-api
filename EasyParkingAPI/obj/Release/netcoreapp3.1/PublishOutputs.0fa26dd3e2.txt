@@ -68,6 +68,8 @@ C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\Pu
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\MailKitEmailSender.dll
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\Model.dll
+C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\ServiceWebApi.dll
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\Model.pdb
+C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\ServiceWebApi.pdb
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\MailKitEmailSender.pdb
 C:\ProyectosGitHubUTN\EasyParkingAPI\EasyParkingAPI\obj\Release\netcoreapp3.1\PubTmp\Out\EasyParkingAPI.deps.json

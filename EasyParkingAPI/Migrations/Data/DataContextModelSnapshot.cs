@@ -19,79 +19,6 @@ namespace EasyParkingAPI.Migrations.Data
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EasyParkingAPI.Model.ApplicationUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Apellido")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("FechaDeNacimiento")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Link_Foto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NumeroDeDocumento")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TipoDeDocumento")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationUser");
-                });
-
             modelBuilder.Entity("Model.DataVehiculoAlojado", b =>
                 {
                     b.Property<int>("Id")
@@ -124,7 +51,7 @@ namespace EasyParkingAPI.Migrations.Data
 
                     b.HasIndex("EstacionamientoId");
 
-                    b.ToTable("DataVehiculoAlojado");
+                    b.ToTable("DataVehiculoAlojados");
                 });
 
             modelBuilder.Entity("Model.Estacionamiento", b =>
@@ -143,40 +70,101 @@ namespace EasyParkingAPI.Migrations.Data
                     b.Property<byte[]>("Imagen")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<bool>("Inactivo")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("MontoReserva")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Observaciones")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PublicacionPausada")
+                        .HasColumnType("bit");
+
                     b.Property<string>("TipoDeLugar")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("applicationUserId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("Estacionamientos");
+                });
+
+            modelBuilder.Entity("Model.Jornada", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DiaDeLaSemana")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EstacionamientoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EstacionamientoId");
+
+                    b.ToTable("Jornadas");
+                });
+
+            modelBuilder.Entity("Model.RangoH", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DesdeHora")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DesdeMinuto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HastaHora")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HastaMinuto")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("JornadaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JornadaId");
+
+                    b.ToTable("RangoHs");
                 });
 
             modelBuilder.Entity("Model.DataVehiculoAlojado", b =>
                 {
-                    b.HasOne("Model.Estacionamiento", null)
+                    b.HasOne("Model.Estacionamiento", "Estacionamiento")
                         .WithMany("TiposDeVehiculosAdmitidos")
                         .HasForeignKey("EstacionamientoId");
                 });
 
-            modelBuilder.Entity("Model.Estacionamiento", b =>
+            modelBuilder.Entity("Model.Jornada", b =>
                 {
-                    b.HasOne("EasyParkingAPI.Model.ApplicationUser", null)
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                    b.HasOne("Model.Estacionamiento", "Estacionamiento")
+                        .WithMany("Jornadas")
+                        .HasForeignKey("EstacionamientoId");
+                });
+
+            modelBuilder.Entity("Model.RangoH", b =>
+                {
+                    b.HasOne("Model.Jornada", "Jornada")
+                        .WithMany("Horarios")
+                        .HasForeignKey("JornadaId");
                 });
 #pragma warning restore 612, 618
         }

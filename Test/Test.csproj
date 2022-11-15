@@ -6,8 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\EasyParkingApp\Model\Model.csproj" />
+    <ProjectReference Include="..\..\EasyParkingApp\ServiceWebApi\ServiceWebApi.csproj" />
     <ProjectReference Include="..\EasyParkingAPI\EasyParkingAPI.csproj" />
-    <ProjectReference Include="..\ServiceWebApi\ServiceWebApi.csproj" />
   </ItemGroup>
 
 </Project>
