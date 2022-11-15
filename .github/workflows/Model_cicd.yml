@@ -1,4 +1,4 @@
-name: Nuget Package Model.csproj
+name: Nuget Package Model
 
 on:
   push:
