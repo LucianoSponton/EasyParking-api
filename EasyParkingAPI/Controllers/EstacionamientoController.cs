@@ -128,7 +128,7 @@ namespace EasyParkingAPI.Controllers
         {
             try
             {   //Inactivo-
-                DataContext dataContext = new DataContext();
+                DataContext dataContext = new DataContext(); //
 
                 //var qweryResult = qweryActivoInactivo(true).Intersect(qweryUsuario(_UserId)); // Hasta aca, solo se prepara el qwery
                 var qweryResult = qweryActivoInactivo(true).Intersect(qweryUsuario(_UserId)); // Hasta aca, solo se prepara el qwery
